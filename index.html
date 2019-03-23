@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0041)https://wxpeppa.github.io/fssl/index.html -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<style>
 		body{margin:0;padding:0;overflow: hidden;}
 		.city{width:100%;position:fixed;bottom: 0px;z-index: 100;}
@@ -9,23 +9,21 @@
 	</style>
 	<title>一日看尽长安花</title>
 </head>
-<body onselectstart="return false">
-	<canvas id="cas" style="background-color:rgba(0,5,24,1)" width="200" height="610">浏览器不支持canvas</canvas>
-	<div class="city"><img src="./一日看尽长安花_files/city.png" alt=""></div>
-	<img src="./一日看尽长安花_files/moon.png" alt="" id="moon" style="visibility: hidden;">
+<body onselectstart = "return false">
+	<canvas id='cas' style="background-color:rgba(0,5,24,1)">浏览器不支持canvas</canvas>
+	<div class="city"><img src="city.png" alt="" /></div>
+	<img src="moon.png" alt="" id="moon" style="visibility: hidden;"/>
 	<audio controls="controls" hidden="hidden" autoplay="autoplay" loop="loop">
-	<source src="1.ogg" type="audio/ogg">
-	<source src="1.mp3" type="audio/mpeg">
+	<source src="1.ogg" type="audio/ogg" />
+	<source src="1.mp3" type="audio/mpeg" />
 	</audio>
 	<div style="display:none">
-		<div class="shape">陈赛赛</div>
-        <div class="shape">祝你</div>
-        <div class="shape">万事胜意</div>
-	<div class="shape">复试顺利</div>
-	<div class="shape">成功上岸</div>
-        <div class="shape">春风得意</div>
-        <div class="shape">还有</div>
-        <div class="shape">早生贵子</div>
+		<div class="shape">I LOVE YOU</div>
+        	<div class="shape"> 微微</div>
+		<div class="shape">加油</div>
+		<div class="shape">一起拼搏</div>
+        	<div class="shape">一起努力</div>
+        	<div class="shape">还有 早生贵子</div>
 	</div>
 	<script>
 		var canvas = document.getElementById("cas");
@@ -35,7 +33,7 @@
 		ocas.width = canvas.width = window.innerWidth;
 		ocas.height = canvas.height = window.innerHeight;
 		var bigbooms = [];
-	    var index_shape=0;
+	
 		window.onload = function(){
 			initAnimate()
 		}
@@ -65,13 +63,7 @@
 					bigbooms.push(bigboom)
 				}
 				else {
-					var bigboom = new Boom(getRandom(canvas.width/3,canvas.width*2/3) ,
-						  					2,
-											"#FFF" ,
-											 {x:canvas.width/2 , y:200} , 
-											 document.querySelectorAll(".shape")[index_shape]
-						 );
-					index_shape=(index_shape+1)% document.querySelectorAll(".shape").length;
+					var bigboom = new Boom(getRandom(canvas.width/3,canvas.width*2/3) ,2,"#FFF" , {x:canvas.width/2 , y:200} , document.querySelectorAll(".shape")[parseInt(getRandom(0, document.querySelectorAll(".shape").length))]);
 					bigbooms.push(bigboom)
 				}
 				lastTime = newTime;
@@ -362,5 +354,5 @@
 			}
 		}
 	</script>
-
-</body></html>
+</body>
+</html>
