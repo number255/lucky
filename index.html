@@ -34,7 +34,7 @@
 		ocas.width = canvas.width = window.innerWidth;
 		ocas.height = canvas.height = window.innerHeight;
 		var bigbooms = [];
-	
+	var index_shape=0;
 		window.onload = function(){
 			initAnimate()
 		}
@@ -64,7 +64,13 @@
 					bigbooms.push(bigboom)
 				}
 				else {
-					var bigboom = new Boom(getRandom(canvas.width/3,canvas.width*2/3) ,2,"#FFF" , {x:canvas.width/2 , y:200} , document.querySelectorAll(".shape")[parseInt(getRandom(0, document.querySelectorAll(".shape").length))]);
+					var bigboom = new Boom(getRandom(canvas.width/3,canvas.width*2/3) ,
+						  					2,
+											"#FFF" ,
+											 {x:canvas.width/2 , y:200} , 
+											 document.querySelectorAll(".shape")[index_shape]
+						 );
+					index_shape=(index_shape+1)% document.querySelectorAll(".shape").length;
 					bigbooms.push(bigboom)
 				}
 				lastTime = newTime;
